@@ -2,6 +2,10 @@
 
 [English](README.md) | **中文**
 
+<p align="center">
+  <img src="assets/xiaoer-ear-install-icon-512.png" alt="小耳桌宠安装图标" width="160" />
+</p>
+
 一个运行在 macOS Hammerspoon 里的桌面小人。当前版本来自一套水彩风小女孩素材，已经接入番茄钟、待办、吃饭、喝水、睡觉、拖动跑步和完成庆祝动画。
 
 ## 功能
@@ -32,6 +36,30 @@
 | 拖动向左 | drag override | `running-left` |
 
 ## 安装
+
+### 友好安装版
+
+1. 先安装 [Hammerspoon](https://www.hammerspoon.org/)。
+2. 在这个 GitHub 页面点击 **Code → Download ZIP**。
+3. 解压下载的文件。
+4. 双击：
+
+```text
+Install Xiaoer Pet.command
+```
+
+安装器会把桌宠复制到 `~/.hammerspoon/pai`，自动生成本地配置，并打开或重载 Hammerspoon。
+
+仓库里也放了一个可爱的“小耳”安装图标：
+
+```text
+assets/xiaoer-ear-install-icon.png
+assets/xiaoer-ear-install-icon.icns
+```
+
+`.command` 安装器第一次运行时，会尝试把这个图标设置到自己身上。GitHub ZIP 下载不一定在首次运行前保留 Finder 自定义图标，所以图标源文件也一起放在仓库里。
+
+### 终端安装
 
 1. 安装 [Hammerspoon](https://www.hammerspoon.org/)。
 2. 克隆本仓库：

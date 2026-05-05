@@ -2,6 +2,10 @@
 
 **English** | [中文](README.zh-CN.md)
 
+<p align="center">
+  <img src="assets/xiaoer-ear-install-icon-512.png" alt="Xiaoer Pet install icon" width="160" />
+</p>
+
 A watercolor desktop pet for macOS, powered by Hammerspoon. This repo packages my current running desktop companion: a small animated girl with pomodoro focus mode, todos, meal reminders, water reminders, sleep reminders, drag-to-run movement, and todo-completion celebration.
 
 ## Features
@@ -32,6 +36,30 @@ A watercolor desktop pet for macOS, powered by Hammerspoon. This repo packages m
 | Drag left | drag override | `running-left` |
 
 ## Install
+
+### Friendly Install
+
+1. Install [Hammerspoon](https://www.hammerspoon.org/).
+2. Click **Code → Download ZIP** on this GitHub page.
+3. Unzip the file.
+4. Double-click:
+
+```text
+Install Xiaoer Pet.command
+```
+
+The installer copies the pet into `~/.hammerspoon/pai`, creates a local config if needed, and opens or reloads Hammerspoon.
+
+The repo includes a cute Xiaoer ear icon at:
+
+```text
+assets/xiaoer-ear-install-icon.png
+assets/xiaoer-ear-install-icon.icns
+```
+
+The `.command` installer also tries to apply this icon to itself the first time it runs. GitHub ZIP downloads do not always preserve Finder custom icons before first launch, so the source icon files are included too.
+
+### Terminal Install
 
 1. Install [Hammerspoon](https://www.hammerspoon.org/).
 2. Clone this repo:

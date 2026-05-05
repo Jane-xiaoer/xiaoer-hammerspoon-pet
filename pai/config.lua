@@ -27,6 +27,13 @@ end
 
 local localConfig = loadLocalConfig()
 
+local function nonEmpty(value, fallback)
+  if type(value) == "string" and value ~= "" then
+    return value
+  end
+  return fallback
+end
+
 config.gemini = {
   api_key = hs.settings.get("pai_gemini_api_key") or os.getenv("GEMINI_API_KEY") or "",
   model = "gemini-2.5-flash",
@@ -87,6 +94,7 @@ config.companion = {
   height = localConfig.companion_height or 192,
   margin_right = 28,
   margin_bottom = 28,
+  owner_name = nonEmpty(localConfig.companion_owner_name, "小耳"),
   lunch_time = localConfig.companion_lunch_time or "12:30",
   dinner_time = localConfig.companion_dinner_time or "18:00",
   sleep_time = localConfig.companion_sleep_time or "22:30",

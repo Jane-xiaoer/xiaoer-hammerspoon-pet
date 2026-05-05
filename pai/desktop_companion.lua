@@ -851,12 +851,14 @@ function Companion:renderPanelHtml()
   local panelMood = MOODS[self:currentMoodName()] or MOODS.idle
   local panelFace = htmlEscape(panelMood.face or MOODS.idle.face)
   local panelFacePath = self:currentImagePathForMood()
+  local ownerName = htmlEscape(config.companion.owner_name or "小耳")
   local panelSkinUrl = htmlEscape(fileUrlForPath((os.getenv("HOME") or "") .. "/.hammerspoon/pai/assets/companion/panel/panel-paper-332x520.png"))
   local faceMarkup = string.format('<div class="face face-emoji">%s</div>', panelFace)
   if panelFacePath ~= "" then
     faceMarkup = string.format(
-      '<div class="face face-image"><img src="%s" alt="小耳" /></div>',
-      htmlEscape(fileUrlForPath(panelFacePath))
+      '<div class="face face-image"><img src="%s" alt="%s" /></div>',
+      htmlEscape(fileUrlForPath(panelFacePath)),
+      ownerName
     )
   end
 
@@ -1287,7 +1289,7 @@ function Companion:renderPanelHtml()
     </svg>
     <div class="card-header">
       <div class="header-text">
-        <div class="header-title">小耳</div>
+        <div class="header-title">%s</div>
         <div class="header-sub">%s</div>
       </div>
       <button type="button" class="btn-close" onclick="postAction('close_panel')">×</button>
@@ -1459,27 +1461,28 @@ function Companion:renderPanelHtml()
 </html>
   ]],
     panelSkinUrl,                       -- 1. generated watercolor panel skin
-    htmlEscape(headerDate),             -- 2. "4月24日 星期四 14:30"
-    tabCls("pomodoro"),                 -- 3. tab-pill pomodoro " active"/""
-    tabCls("todos"),                    -- 4. tab-pill todos
-    tabCls("remind"),                   -- 5. tab-pill remind
-    tabCls("future"),                   -- 6. tab-pill future
-    tabCls("pomodoro"),                 -- 7. tab-panel pomodoro
-    focusPct,                           -- 8. focus progress percent (0-100)
-    htmlEscape(focusDisplay),           -- 9. "45:00" or "12:34"
-    focusAction,                        -- 10. "start_focus" or "stop_focus"
-    htmlEscape(focusButtonLabel),       -- 11. "go" or "stop"
-    tabCls("todos"),                    -- 12. tab-panel todos
-    countDone(todos),                   -- 13. done count
-    #todos,                             -- 14. total todos
-    table.concat(todoItems, "\n"),      -- 15. todo rows
-    table.concat(inputRows, "\n"),      -- 16. input rows
-    tabCls("remind"),                   -- 17. tab-panel remind
-    table.concat(todayReminderItems, "\n"),   -- 18. today reminders
-    tabCls("future"),                   -- 19. tab-panel future
-    table.concat(futureReminderItems, "\n"),  -- 20. future reminders
-    actionEndpoint,                     -- 21. action endpoint (%q)
-    todayKey                            -- 22. today YYYY-MM-DD (%q, used by JS)
+    ownerName,                          -- 2. panel owner/title
+    htmlEscape(headerDate),             -- 3. "4月24日 星期四 14:30"
+    tabCls("pomodoro"),                 -- 4. tab-pill pomodoro " active"/""
+    tabCls("todos"),                    -- 5. tab-pill todos
+    tabCls("remind"),                   -- 6. tab-pill remind
+    tabCls("future"),                   -- 7. tab-pill future
+    tabCls("pomodoro"),                 -- 8. tab-panel pomodoro
+    focusPct,                           -- 9. focus progress percent (0-100)
+    htmlEscape(focusDisplay),           -- 10. "45:00" or "12:34"
+    focusAction,                        -- 11. "start_focus" or "stop_focus"
+    htmlEscape(focusButtonLabel),       -- 12. "go" or "stop"
+    tabCls("todos"),                    -- 13. tab-panel todos
+    countDone(todos),                   -- 14. done count
+    #todos,                             -- 15. total todos
+    table.concat(todoItems, "\n"),      -- 16. todo rows
+    table.concat(inputRows, "\n"),      -- 17. input rows
+    tabCls("remind"),                   -- 18. tab-panel remind
+    table.concat(todayReminderItems, "\n"),   -- 19. today reminders
+    tabCls("future"),                   -- 20. tab-panel future
+    table.concat(futureReminderItems, "\n"),  -- 21. future reminders
+    actionEndpoint,                     -- 22. action endpoint (%q)
+    todayKey                            -- 23. today YYYY-MM-DD (%q, used by JS)
   )
 end
 
@@ -1860,7 +1863,7 @@ function Companion:finishDrag()
 
   if didDrag then
     self:rememberAnchor(self.anchorFrame, self.currentScreen or self:preferredScreen())
-    self:showBubble("小耳，你简直就是个天才！", 5)
+    self:showBubble(string.format("%s，你简直就是个天才！", config.companion.owner_name or "小耳"), 5)
   else
     self:showControlPanel()
   end

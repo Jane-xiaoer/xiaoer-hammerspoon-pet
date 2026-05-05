@@ -48,7 +48,7 @@ A watercolor desktop pet for macOS, powered by Hammerspoon. This repo packages m
 Install Xiaoer Pet.command
 ```
 
-The installer copies the pet into `~/.hammerspoon/pai`, creates a local config if needed, and opens or reloads Hammerspoon.
+The installer copies the pet into `~/.hammerspoon/pai`, creates a local config if needed, asks what the pet should call you, and opens or reloads Hammerspoon. That name appears in the panel title and the drag encouragement text.
 
 If you prefer the ZIP route, click **Code → Download ZIP**, unzip it, then double-click the same `Install Xiaoer Pet.command`.
 

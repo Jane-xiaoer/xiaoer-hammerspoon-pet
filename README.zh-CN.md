@@ -48,7 +48,7 @@
 Install Xiaoer Pet.command
 ```
 
-安装器会把桌宠复制到 `~/.hammerspoon/pai`，自动生成本地配置，并打开或重载 Hammerspoon。
+安装器会把桌宠复制到 `~/.hammerspoon/pai`，自动生成本地配置，询问“桌宠怎么称呼你”，并打开或重载 Hammerspoon。这个名字会显示在面板标题和移动时的鼓励文字里。
 
 如果你想走 ZIP 方式，也可以点击 **Code → Download ZIP**，解压后双击同一个 `Install Xiaoer Pet.command`。
 

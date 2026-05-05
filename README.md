@@ -1,38 +1,40 @@
 # Xiaoer Hammerspoon Pet
 
-一个运行在 macOS Hammerspoon 里的桌面小人。当前版本来自一套水彩风小女孩素材，已经接入番茄钟、待办、吃饭、喝水、睡觉、拖动跑步和完成庆祝动画。
+**English** | [中文](README.zh-CN.md)
 
-## 功能
+A watercolor desktop pet for macOS, powered by Hammerspoon. This repo packages my current running desktop companion: a small animated girl with pomodoro focus mode, todos, meal reminders, water reminders, sleep reminders, drag-to-run movement, and todo-completion celebration.
 
-- 桌面常驻小人，可拖动位置。
-- `Control + Option + P` 打开透明水彩风控制面板。
-- 45 分钟番茄钟：专注中播放 `working`，结束后跳到屏幕中间播放 `failed`，直到点掉。
-- 每天 `12:30`、`18:00` 提醒吃饭，播放 `eating`。
-- 每天 `22:30` 提醒睡觉，播放 `sleeping`。
-- 每 1 小时提醒喝水，播放 `drinking`。
-- 自定义提醒文字包含吃饭、喝水、睡觉关键词时，会自动切对应动画。
-- 当天所有待办完成后播放 `jumping` 庆祝。
-- 拖动桌宠时，向右播放 `running-right`，向左播放 `running-left`。
+## Features
 
-## 当前动画映射
+- Always-on desktop companion that can be dragged anywhere on screen.
+- `Control + Option + P` opens a translucent watercolor control panel.
+- 45-minute pomodoro: plays `working` while focusing, then jumps to the screen center with `failed` until dismissed.
+- Daily meal reminders at `12:30` and `18:00`, playing `eating`.
+- Daily sleep reminder at `22:30`, playing `sleeping`.
+- Hourly water reminder, playing `drinking`.
+- Custom reminders automatically map to meal, water, or sleep animations when the text contains matching keywords.
+- Completing all todos for the day plays `jumping` as a celebration.
+- Dragging the pet plays `running-right` or `running-left` based on mouse direction.
 
-| 场景 | mood / state | 动画目录 |
+## Animation Mapping
+
+| Scenario | mood / state | Animation folder |
 |---|---|---|
-| 日常轮播 | `idle` | `idle`, `review`, `waving`, `running`, `waiting` |
-| 专注工作 | `focus` | `working` |
-| 完成普通待办 | `break` | `waving` |
-| 当天全部待办完成 | `jumping` | `jumping` |
-| 吃饭提醒 | `hungry` | `eating` |
-| 喝水提醒 | `thirsty` | `drinking` |
-| 睡觉提醒 | `sleepy` | `sleeping` |
-| 专注结束休息提醒 | `failed` | `failed` |
-| 拖动向右 | drag override | `running-right` |
-| 拖动向左 | drag override | `running-left` |
+| Daily idle loop | `idle` | `idle`, `review`, `waving`, `running`, `waiting` |
+| Focus work | `focus` | `working` |
+| Complete a normal todo | `break` | `waving` |
+| Complete all todos today | `jumping` | `jumping` |
+| Meal reminder | `hungry` | `eating` |
+| Water reminder | `thirsty` | `drinking` |
+| Sleep reminder | `sleepy` | `sleeping` |
+| Pomodoro break reminder | `failed` | `failed` |
+| Drag right | drag override | `running-right` |
+| Drag left | drag override | `running-left` |
 
-## 安装
+## Install
 
-1. 安装 [Hammerspoon](https://www.hammerspoon.org/)。
-2. 克隆本仓库：
+1. Install [Hammerspoon](https://www.hammerspoon.org/).
+2. Clone this repo:
 
 ```bash
 git clone https://github.com/Jane-xiaoer/xiaoer-hammerspoon-pet.git
@@ -41,23 +43,23 @@ chmod +x scripts/install.sh
 ./scripts/install.sh
 ```
 
-3. 如果你已有自己的 `~/.hammerspoon/init.lua`，确认里面包含：
+3. If you already have `~/.hammerspoon/init.lua`, make sure it contains:
 
 ```lua
 require("pai").start()
 ```
 
-4. 重启 Hammerspoon。
+4. Restart Hammerspoon.
 
-## 自定义成你自己的角色
+## Make Your Own Character
 
-动画素材都在：
+Animation frames live here:
 
 ```text
 pai/assets/companion/balloons/
 ```
 
-每个状态一个目录，里面是按顺序播放的 PNG 帧：
+Each state is a folder of ordered PNG frames:
 
 ```text
 idle/00.png
@@ -68,52 +70,52 @@ working/01.png
 ...
 ```
 
-替换方法：
+To customize:
 
-1. 从下面任一 pet 源头下载或生成你喜欢的角色素材。
-2. 把同一个动作拆成连续 PNG 帧。
-3. 放进对应状态目录，保持 `00.png`, `01.png`, `02.png` 这样的命名。
-4. 重启 Hammerspoon。
+1. Download or generate a pet character from one of the pet sources below.
+2. Split each action into sequential PNG frames.
+3. Drop the frames into the matching state folder using names like `00.png`, `01.png`, `02.png`.
+4. Restart Hammerspoon.
 
-推荐 pet 源头：
+Pet sources:
 
 - [codexpet.xyz](https://codexpet.xyz/)
 - [codex-pets.net](https://codex-pets.net/)
 - [gitpets.com](https://gitpets.com/)
 
-## 状态目录建议
+## Suggested State Folders
 
-| 目录 | 建议动作 |
+| Folder | Suggested motion |
 |---|---|
-| `idle` | 站着、眨眼、轻微晃动 |
-| `review` | 看东西、思考、检查 |
-| `waving` | 挥手、开心 |
-| `waiting` | 等待、发呆 |
-| `running` | 日常轮播里的小跑 |
-| `running-right` | 被鼠标拖着向右跑 |
-| `running-left` | 被鼠标拖着向左跑 |
-| `working` | 认真工作、敲键盘 |
-| `eating` | 吃饭提醒、摇铃 |
-| `drinking` | 喝水提醒、举杯 |
-| `sleeping` | 睡觉提醒、打哈欠 |
-| `failed` | 番茄钟结束、提醒休息 |
-| `jumping` | 完成全部待办后的庆祝 |
+| `idle` | standing, blinking, soft breathing |
+| `review` | reading, thinking, checking |
+| `waving` | waving, happy |
+| `waiting` | waiting, daydreaming |
+| `running` | casual running for the idle loop |
+| `running-right` | running right while dragged |
+| `running-left` | running left while dragged |
+| `working` | focused work, typing |
+| `eating` | meal reminder, ringing a bell |
+| `drinking` | water reminder, lifting a cup |
+| `sleeping` | sleep reminder, yawning |
+| `failed` | pomodoro ended, rest reminder |
+| `jumping` | celebration after all todos are done |
 
-## 配置
+## Configuration
 
-安装脚本会生成：
+The install script creates:
 
 ```text
 ~/.hammerspoon/pai/local_config.json
 ```
 
-这里可以改尺寸、提醒时间和动画映射。示例文件在：
+Use it to change size, reminder times, and animation mappings. The template is:
 
 ```text
 pai/local_config.example.json
 ```
 
-常用配置：
+Common settings:
 
 ```json
 {
@@ -125,8 +127,29 @@ pai/local_config.example.json
 }
 ```
 
-## 注意
+## Notes
 
-- 本仓库不包含个人 API key、语音助手配置或本地状态文件。
-- `local_config.json` 和 `companion_state.json` 不应提交到 GitHub。
-- 这是 Hammerspoon Lua 脚本，不是独立 macOS App。
+- This repo does not include personal API keys, voice-agent settings, or local runtime state.
+- Do not commit `local_config.json` or `companion_state.json`.
+- This is a Hammerspoon Lua setup, not a standalone macOS app.
+
+## License
+
+[MIT](LICENSE)
+
+---
+
+## Follow Me
+
+If this repo helped you, follow me for more AI skills, desktop automation, Hammerspoon tools, creative coding, and personal productivity experiments.
+
+- X (Twitter): [@xiaoerzhan](https://x.com/xiaoerzhan)
+- WeChat Official Account: Scan to follow
+
+<p align="center">
+  <img src="assets/follow-wechat-qrcode.jpg" alt="Jane WeChat Official Account QR code" width="300" />
+</p>
+
+<p align="center"><strong>English:</strong> Follow my WeChat Official Account for more AI skills, desktop automation, Hammerspoon tools, and creative experiments.</p>
+
+<p align="center"><strong>中文：</strong>欢迎关注我的公众号，一起研究 AI Skill、桌面自动化、Hammerspoon 工具和创意实验。</p>

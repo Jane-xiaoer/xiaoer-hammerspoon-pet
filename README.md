@@ -40,8 +40,8 @@ A watercolor desktop pet for macOS, powered by Hammerspoon. This repo packages m
 ### Friendly Install
 
 1. Install [Hammerspoon](https://www.hammerspoon.org/).
-2. Click **Code → Download ZIP** on this GitHub page.
-3. Unzip the file.
+2. Download `XiaoerPet.dmg` from this repo's [Releases](https://github.com/Jane-xiaoer/xiaoer-hammerspoon-pet/releases).
+3. Open the DMG.
 4. Double-click:
 
 ```text
@@ -49,6 +49,8 @@ Install Xiaoer Pet.command
 ```
 
 The installer copies the pet into `~/.hammerspoon/pai`, creates a local config if needed, and opens or reloads Hammerspoon.
+
+If you prefer the ZIP route, click **Code → Download ZIP**, unzip it, then double-click the same `Install Xiaoer Pet.command`.
 
 The repo includes a cute Xiaoer ear icon at:
 
@@ -58,6 +60,32 @@ assets/xiaoer-ear-install-icon.icns
 ```
 
 The `.command` installer also tries to apply this icon to itself the first time it runs. GitHub ZIP downloads do not always preserve Finder custom icons before first launch, so the source icon files are included too.
+
+### DMG Build
+
+To build a shareable DMG locally:
+
+```bash
+chmod +x scripts/build-dmg.sh
+./scripts/build-dmg.sh
+```
+
+The DMG will be written to:
+
+```text
+dist/XiaoerPet.dmg
+```
+
+The DMG includes:
+
+```text
+Install Xiaoer Pet.command
+Switch Pet.command
+pets/xiaoer/
+pets/_template/
+README.md
+README.zh-CN.md
+```
 
 ### Terminal Install
 
@@ -110,6 +138,32 @@ Pet sources:
 - [codexpet.xyz](https://codexpet.xyz/)
 - [codex-pets.net](https://codex-pets.net/)
 - [gitpets.com](https://gitpets.com/)
+
+## Switch Pets
+
+After installing, double-click:
+
+```text
+Switch Pet.command
+```
+
+Choose a pet folder. The switcher copies that folder into:
+
+```text
+~/.hammerspoon/pai/pets/
+```
+
+Then it updates:
+
+```text
+~/.hammerspoon/pai/local_config.json
+```
+
+so `companion_animation_root` points to the selected pet.
+
+This means a DMG does **not** limit customization. The DMG is only the delivery package; your actual pet files live in `~/.hammerspoon/pai/pets/` after installation.
+
+For a custom pet, copy `pets/_template`, rename it, fill each state folder with PNG frames, then use `Switch Pet.command` to select it.
 
 ## Suggested State Folders
 

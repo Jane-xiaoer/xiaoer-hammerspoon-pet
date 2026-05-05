@@ -7,6 +7,11 @@ hammerspoon_dir="${HOME}/.hammerspoon"
 mkdir -p "${hammerspoon_dir}"
 rsync -a --delete "${repo_root}/pai/" "${hammerspoon_dir}/pai/"
 
+if [[ -d "${repo_root}/pets" ]]; then
+  mkdir -p "${hammerspoon_dir}/pai/pets"
+  rsync -a --delete "${repo_root}/pets/" "${hammerspoon_dir}/pai/pets/"
+fi
+
 if [[ ! -f "${hammerspoon_dir}/pai/local_config.json" ]]; then
   sed "s#/Users/YOUR_NAME#${HOME}#g" \
     "${repo_root}/pai/local_config.example.json" \

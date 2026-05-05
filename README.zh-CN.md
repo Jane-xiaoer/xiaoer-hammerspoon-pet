@@ -40,8 +40,8 @@
 ### 友好安装版
 
 1. 先安装 [Hammerspoon](https://www.hammerspoon.org/)。
-2. 在这个 GitHub 页面点击 **Code → Download ZIP**。
-3. 解压下载的文件。
+2. 在本仓库的 [Releases](https://github.com/Jane-xiaoer/xiaoer-hammerspoon-pet/releases) 下载 `XiaoerPet.dmg`。
+3. 打开 DMG。
 4. 双击：
 
 ```text
@@ -49,6 +49,8 @@ Install Xiaoer Pet.command
 ```
 
 安装器会把桌宠复制到 `~/.hammerspoon/pai`，自动生成本地配置，并打开或重载 Hammerspoon。
+
+如果你想走 ZIP 方式，也可以点击 **Code → Download ZIP**，解压后双击同一个 `Install Xiaoer Pet.command`。
 
 仓库里也放了一个可爱的“小耳”安装图标：
 
@@ -58,6 +60,32 @@ assets/xiaoer-ear-install-icon.icns
 ```
 
 `.command` 安装器第一次运行时，会尝试把这个图标设置到自己身上。GitHub ZIP 下载不一定在首次运行前保留 Finder 自定义图标，所以图标源文件也一起放在仓库里。
+
+### 构建 DMG
+
+如果你想本地生成一个方便分发的 DMG：
+
+```bash
+chmod +x scripts/build-dmg.sh
+./scripts/build-dmg.sh
+```
+
+生成位置：
+
+```text
+dist/XiaoerPet.dmg
+```
+
+DMG 里会包含：
+
+```text
+Install Xiaoer Pet.command
+Switch Pet.command
+pets/xiaoer/
+pets/_template/
+README.md
+README.zh-CN.md
+```
 
 ### 终端安装
 
@@ -110,6 +138,32 @@ working/01.png
 - [codexpet.xyz](https://codexpet.xyz/)
 - [codex-pets.net](https://codex-pets.net/)
 - [gitpets.com](https://gitpets.com/)
+
+## 切换 Pet
+
+安装之后，双击：
+
+```text
+Switch Pet.command
+```
+
+选择一个 pet 文件夹。切换器会把这个文件夹复制到：
+
+```text
+~/.hammerspoon/pai/pets/
+```
+
+然后自动更新：
+
+```text
+~/.hammerspoon/pai/local_config.json
+```
+
+让 `companion_animation_root` 指向你选择的 pet。
+
+所以 DMG 不会限制自定义。DMG 只是分发外壳；真正安装后的 pet 文件会放在 `~/.hammerspoon/pai/pets/` 里。
+
+如果要做自己的角色，可以复制 `pets/_template`，改名，把每个状态目录填入 PNG 帧，然后用 `Switch Pet.command` 选择它。
 
 ## 状态目录建议
 

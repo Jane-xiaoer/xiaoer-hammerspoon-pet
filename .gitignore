@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+companion_state.json
+local_config.json
+backups/
+tmp/

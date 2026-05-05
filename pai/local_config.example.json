@@ -1,0 +1,39 @@
+{
+  "companion_width": 210,
+  "companion_height": 288,
+  "companion_panel_width": 299,
+  "companion_panel_height": 469,
+  "companion_animation_interval_seconds": 0.18,
+  "companion_animation_frame_interval_seconds": 0.18,
+  "companion_animation_root": "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/balloons",
+  "companion_animation_mood_map": {
+    "idle": "idle",
+    "focus": "working",
+    "break": "waving",
+    "hungry": "eating",
+    "sleepy": "sleeping",
+    "thirsty": "drinking"
+  },
+  "companion_idle_animation_cycle_seconds": 600,
+  "companion_idle_animation_cycle_states": [
+    "idle",
+    "review",
+    "waving",
+    "running",
+    "waiting"
+  ],
+  "companion_image_path": "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/idle.png",
+  "companion_idle_image_paths": [
+    "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/balloons.png",
+    "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/idle.png",
+    "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/mushroom.png",
+    "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/postman.png",
+    "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/rainpool.png",
+    "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/reading.png",
+    "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/stargarden.png"
+  ],
+  "companion_focus_image_path": "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/focus.png",
+  "companion_break_image_path": "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/break.png",
+  "companion_hungry_image_path": "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/hungry.png",
+  "companion_sleepy_image_path": "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/whale.png"
+}

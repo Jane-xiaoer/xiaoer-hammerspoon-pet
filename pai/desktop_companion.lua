@@ -347,6 +347,7 @@ local ANIMATION_STATES = {
   "waiting",
   "running",
   "rowing",
+  "yoga",
   "review",
   "working",
   "eating",

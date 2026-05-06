@@ -8,6 +8,12 @@
 
 一个运行在 macOS Hammerspoon 里的桌面小人。当前版本来自一套水彩风小女孩素材，已经接入番茄钟、待办、吃饭、喝水、睡觉、拖动跑步和完成庆祝动画。
 
+## 宣传视频
+
+[![观看小耳防沉迷桌宠宣传视频](assets/xiaoer-pet-demo-poster.jpg)](https://github.com/Jane-xiaoer/xiaoer-hammerspoon-pet/releases/download/v0.1.3/xiaoer-anti-addiction-desktop-pet-demo.mp4)
+
+点击观看：[小耳防沉迷桌宠宣传视频](https://github.com/Jane-xiaoer/xiaoer-hammerspoon-pet/releases/download/v0.1.3/xiaoer-anti-addiction-desktop-pet-demo.mp4)。
+
 ## 功能
 
 - 桌面常驻小人，可拖动位置。

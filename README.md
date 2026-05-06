@@ -8,6 +8,12 @@
 
 A watercolor desktop pet for macOS, powered by Hammerspoon. This repo packages my current running desktop companion: a small animated girl with pomodoro focus mode, todos, meal reminders, water reminders, sleep reminders, drag-to-run movement, and todo-completion celebration.
 
+## Demo Video
+
+[![Watch Xiaoer Pet demo](assets/xiaoer-pet-demo-poster.jpg)](https://github.com/Jane-xiaoer/xiaoer-hammerspoon-pet/releases/download/v0.1.3/xiaoer-anti-addiction-desktop-pet-demo.mp4)
+
+Watch the desktop pet in action: [Xiaoer anti-distraction desktop pet demo](https://github.com/Jane-xiaoer/xiaoer-hammerspoon-pet/releases/download/v0.1.3/xiaoer-anti-addiction-desktop-pet-demo.mp4).
+
 ## Features
 
 - Always-on desktop companion that can be dragged anywhere on screen.

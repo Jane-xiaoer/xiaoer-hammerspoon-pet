@@ -30,7 +30,7 @@
 
 | 场景 | mood / state | 动画目录 |
 |---|---|---|
-| 日常轮播 | `idle` | `idle`, `review`, `waving`, `running`, `rowing`, `yoga`, `tree`, `waiting` |
+| 日常轮播 | `idle` | `idle`, `review`, `waving`, `running`, `rowing`, `yoga`, `tree`, `fishbowl`, `waiting` |
 | 专注工作 | `focus` | `working` |
 | 完成普通待办 | `break` | `waving` |
 | 当天全部待办完成 | `jumping` | `jumping` |
@@ -183,6 +183,7 @@ Switch Pet.command
 | `rowing` | 日常轮播里的划船机运动 |
 | `yoga` | 日常轮播里的瑜伽球伸懒腰 |
 | `tree` | 日常轮播里的瑜伽树式伸展 |
+| `fishbowl` | 日常轮播里的看小鱼游动 |
 | `running-right` | 被鼠标拖着向右跑 |
 | `running-left` | 被鼠标拖着向左跑 |
 | `working` | 认真工作、敲键盘 |

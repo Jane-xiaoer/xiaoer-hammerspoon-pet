@@ -349,6 +349,7 @@ local ANIMATION_STATES = {
   "rowing",
   "yoga",
   "tree",
+  "fishbowl",
   "review",
   "working",
   "eating",

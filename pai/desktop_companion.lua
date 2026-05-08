@@ -346,7 +346,7 @@ local ANIMATION_STATES = {
   "failed",
   "waiting",
   "running",
-  "rowing",
+  "butterfly",
   "yoga",
   "tree",
   "fishbowl",

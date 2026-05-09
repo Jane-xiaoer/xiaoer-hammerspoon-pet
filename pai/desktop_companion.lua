@@ -347,7 +347,6 @@ local ANIMATION_STATES = {
   "waiting",
   "eureka",
   "running",
-  "butterfly",
   "yoga",
   "tree",
   "fishbowl",

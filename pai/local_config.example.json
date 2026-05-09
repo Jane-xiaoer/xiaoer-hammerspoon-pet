@@ -19,6 +19,7 @@
   "companion_idle_animation_cycle_states": [
     "idle",
     "review",
+    "eureka",
     "waving",
     "running",
     "butterfly",

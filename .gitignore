@@ -5,3 +5,4 @@ local_config.json
 backups/
 tmp/
 dist/
+.hatch-runs/

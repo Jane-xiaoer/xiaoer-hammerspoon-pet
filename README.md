@@ -30,7 +30,7 @@ Watch the desktop pet in action: [Xiaoer anti-distraction desktop pet demo](http
 
 | Scenario | mood / state | Animation folder |
 |---|---|---|
-| Daily idle loop | `idle` | `idle`, `review`, `eureka`, `waving`, `running`, `yoga`, `tree`, `fishbowl`, `waiting` |
+| Daily idle loop | `idle` | `idle`, `review`, `waving`, `running`, `waiting` |
 | Focus work | `focus` | `working` |
 | Complete a normal todo | `break` | `waving` |
 | Complete all todos today | `jumping` | `jumping` |
@@ -177,13 +177,9 @@ For a custom pet, copy `pets/_template`, rename it, fill each state folder with 
 |---|---|
 | `idle` | standing, blinking, soft breathing |
 | `review` | reading, thinking, checking |
-| `eureka` | idea moment with a blinking bulb and flying notes |
 | `waving` | waving, happy |
 | `waiting` | waiting, daydreaming |
 | `running` | casual running for the idle loop |
-| `yoga` | yoga-ball stretch for the idle loop |
-| `tree` | yoga tree-pose stretch for the idle loop |
-| `fishbowl` | fishbowl watching animation for the idle loop |
 | `running-right` | running right while dragged |
 | `running-left` | running left while dragged |
 | `working` | focused work, typing |

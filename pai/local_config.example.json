@@ -19,12 +19,8 @@
   "companion_idle_animation_cycle_states": [
     "idle",
     "review",
-    "eureka",
     "waving",
     "running",
-    "yoga",
-    "tree",
-    "fishbowl",
     "waiting"
   ],
   "companion_image_path": "/Users/YOUR_NAME/.hammerspoon/pai/assets/companion/kids/idle.png",
